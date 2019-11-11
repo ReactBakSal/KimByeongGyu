@@ -18,7 +18,7 @@ const NewsListBlock = styled.div`
 
 const API_KEY = "2e2682361adc4777a97f72b81f6bbb00"
 
-const NewsList = () => {
+const NewsList = ({ category }) => {
   const [articles, setArticles] = useState(null)
   const [loading, setLoading] = useState(false)
 
@@ -26,8 +26,9 @@ const NewsList = () => {
     const fetchData = async () => {
       setLoading(true)
       try {
+        const query = category === "all" ? "" : `&category=${category}`
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${API_KEY}`
+          `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=${API_KEY}`
         )
 
         setArticles(response.data.articles)
@@ -38,7 +39,7 @@ const NewsList = () => {
     }
 
     fetchData()
-  }, [])
+  }, [category])
 
   if (loading) {
     return <NewsListBlock>대기 중 ...</NewsListBlock>
