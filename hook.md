@@ -2,7 +2,7 @@
 
 ## Redux Flow
 
-<img src="https://user-images.githubusercontent.com/7090906/69519846-58f63000-0f9e-11ea-8b7f-fefd7cebbccc.png" width="200" />
+<img src="https://user-images.githubusercontent.com/7090906/69519846-58f63000-0f9e-11ea-8b7f-fefd7cebbccc.png" width="500" />
 
 > 리듀서는 현재 상태(State)를 업데이트하기 위해 필요한 정보를 담은 액션(Action) 객체를 전달받아 새로운 상태를 반환하는 **함수**입니다.
 
